@@ -1,5 +1,7 @@
 *, *::before, *::after {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 
@@ -7,9 +9,40 @@
     --light: white;
     --gold: #d4af37;
     --blue: #00003e;
-    --gold2: #a27708;
+    --gold2: #c9a84c;
+    --bluedark: #080828;
 }
 
+.toggle-check {
+    display: none;
+}
+
+.hamburguesa {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.hamburguesa span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: var(--gold2);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* X al abrir */
+.toggle-check:checked ~ .hamburguesa span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.toggle-check:checked ~ .hamburguesa span:nth-child(2) {
+    opacity: 0;
+}
+.toggle-check:checked ~ .hamburguesa span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
 
 header {
   position: sticky;
@@ -20,19 +53,19 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 20px 10px;
-  height: 68px;
+  height: 78px;
   background: var(--blue);
   border-bottom: 2px solid var(--gold2);
 }
 
 nav {
   display: flex;
-  gap: 16px;
+  gap: 26px;
   align-items: center;
 }
 
 nav a {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 0.72rem;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -47,13 +80,22 @@ nav a:hover {
 }
 
 body {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
   background: var(--blue);
 }
-main {
-  padding: 32px;
+.logorestaurant {
+  top: 10px;
+    width: 150px;
+    height: 170px;
 }
-
+h1 a {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 16px;
+  text-decoration: none;
+}
 .home {
     background-image: url(https://aprende.com/wp-content/uploads/2021/12/clases-online-de-chef.jpg);
   display: flex;
@@ -70,17 +112,170 @@ main {
 }
 section{
     background-color: var(--blue);
-    border: 1px solid var(--gold);
     padding: 32px;
-    margin-top: 32px;
+    margin-top: 0;
     color: var(--gold);
+    min-height: 500px;
+}
+ul {
+    margin-top: 16px;
+    color: var(--gold2);
+    font-size: 30px;
+    letter-spacing: 1px;
 }
 .about, .events, .photos, .chefs {
     background: var(--blue);
     border-top: 1px solid var(--gold);
+    text-align: left;
     padding: 32px;
-    margin-top: 32px;
+    margin-top: 0;
     color: var(--gold);
+}
+.btn {
+  margin-top: 20px;
+    width: 180px;
+  display: flex;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--blue);
+  background: var(--gold2);
+  border: 2.5px solid var(--gold2);
+  padding: 12px;
+  border-radius: 5px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--gold2);
+}
+.carrusel-auto {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 24px;
+}
+
+.carrusel-track {
+    display: flex;
+    gap: 16px;
+    animation: desplazar 12s linear infinite;
+}
+
+.carrusel-track img {
+    width: 400px;
+    height: 260px;
+    object-fit: cover;
+    border: 1px solid var(--gold2);
+    flex-shrink: 0;
+}
+
+@keyframes desplazar {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.carrusel-chefs {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.chefs-ventana {
+    overflow: hidden;
+    width: 100%;
+}
+
+.chefs-track {
+    display: flex;
+    gap: 40px;
+    transition: transform 0.5s ease;
+}
+
+.flecha {
+    background: transparent;
+    border: 2px solid var(--gold2);
+    color: var(--gold2);
+    font-size: 1.4rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s, color 0.2s;
+}
+
+.flecha:hover {
+    background: var(--gold2);
+    color: var(--blue);
+}
+.contenedor-chefs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+}
+.tarjeta {
+  position: relative;
+  width: 400px;
+  padding: 1.5rem;
+  border-radius: 20px;
+  text-align: center;
+  border: 2px solid var(--gold2);
+  background: var(--bluedark);
+  }
+
+
+.tarjeta:hover {
+    transform: translateY(-8px);
+    border: 4px solid var(--gold);
+}
+
+.tarjeta h3 {
+    font-size: 20px;
+    margin: 0 0 8px 0;
+    letter-spacing: 2px;
+}
+
+.tarjeta h1:hover{
+     transform: scale(1.05);
+    color: #ccc;
+}
+.tarjeta-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ── FOTOS ── */
+.foto-perfil {
+    width: 300px;
+    height: 300px;
+
+    border-radius: 0;
+    object-fit: cover;
+    margin: 0 auto;
+    border: 2px solid rgba(218, 165, 32, 0.5)
+}
+
+.tarjeta-cuerpo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1rem;
+    color: #ccc;
+    font-size: 14px;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.tarjeta-cuerpo p {
+    margin: 0;
+    letter-spacing: 1px;
 }
 
 footer {
@@ -92,21 +287,31 @@ footer {
     color: var(--gold);
 }
 
+
+
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    gap: 20px;
-    height: auto;
-  }
+    .hamburguesa {
+        display: flex;
+    }
 
-  nav {
-    flex-direction: column;
-    gap: 18px;
-  }
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 78px;
+        left: 0;
+        width: 100%;
+        background: var(--blue);
+        border-bottom: 2px solid var(--gold2);
+        padding: 24px;
+        gap: 20px;
+        z-index: 99;
+    }
 
-  main {
-    padding: 16px;
-  }
+    /* Abre el nav cuando el checkbox está marcado */
+    .toggle-check:checked ~ nav {
+        display: flex;
+    }
 }
  table{
     width: 100%;
@@ -134,3 +339,10 @@ footer {
    background: var(--gold2);
    color: var(--blue);
  }
+.logos {
+    width: 200px;
+    margin-top: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
