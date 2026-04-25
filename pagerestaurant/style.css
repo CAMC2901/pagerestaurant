@@ -374,6 +374,7 @@ th {
 
 tr:nth-child(even) {
    background: var(--light);
+   opacity: 0.8;
 }
 
 tr:hover {
