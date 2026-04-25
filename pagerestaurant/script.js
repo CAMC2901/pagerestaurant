@@ -14,3 +14,18 @@ function moverChef(direccion) {
 
     track.style.transform = `translateX(-${posicion * ancho}px)`;
 }
+
+function abrirZoom(item) {
+  const src = item.querySelector('img').src;
+  document.getElementById('zoomImg').src = src;
+  document.getElementById('zoomOverlay').classList.add('activo');
+}
+
+function cerrarZoom() {
+  document.getElementById('zoomOverlay').classList.remove('activo');
+}
+
+// También cerrar con la tecla Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') cerrarZoom();
+});

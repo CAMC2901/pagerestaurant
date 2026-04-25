@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 :root {
     --light: white;
     --gold: #d4af37;
@@ -17,7 +16,7 @@
     display: none;
 }
 
-.hamburguesa {
+.menu {
     display: none;
     flex-direction: column;
     gap: 5px;
@@ -25,7 +24,7 @@
     padding: 4px;
 }
 
-.hamburguesa span {
+.menu span {
     display: block;
     width: 26px;
     height: 2px;
@@ -33,14 +32,13 @@
     transition: transform 0.3s, opacity 0.3s;
 }
 
-/* X al abrir */
-.toggle-check:checked ~ .hamburguesa span:nth-child(1) {
+.toggle-check:checked ~ .menu span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
 }
-.toggle-check:checked ~ .hamburguesa span:nth-child(2) {
+.toggle-check:checked ~ .menuspan:nth-child(2) {
     opacity: 0;
 }
-.toggle-check:checked ~ .hamburguesa span:nth-child(3) {
+.toggle-check:checked ~ .menu span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
 }
 
@@ -84,11 +82,13 @@ body {
   font-weight: 300;
   background: var(--blue);
 }
+
 .logorestaurant {
   top: 10px;
-    width: 150px;
-    height: 170px;
+  width: 150px;
+  height: 170px;
 }
+
 h1 a {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
@@ -96,33 +96,78 @@ h1 a {
   margin-bottom: 16px;
   text-decoration: none;
 }
+
 .home {
-    background-image: url(https://aprende.com/wp-content/uploads/2021/12/clases-online-de-chef.jpg);
+  position: relative;
+  background-image: url(https://aprende.com/wp-content/uploads/2021/12/clases-online-de-chef.jpg);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 800px;
+  gap: 400px;
   padding: 32px;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   color: var(--gold);
-  border: 1px solid var(--gold);
 }
-section{
+
+.home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 62, 0.4);
+    z-index: 1;
+}
+
+.home h2, .home p, .foto-home {
+    font-size: 36px;
+    letter-spacing: 2px;
+    z-index: 2;
+}
+
+h2 {
+    font-size: 50px;
+    letter-spacing: 2px;
+}
+
+p {
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+.foto-home {
+    width: 400px;
+    height: 500px;
+}
+
+section {
     background-color: var(--blue);
     padding: 32px;
     margin-top: 0;
     color: var(--gold);
     min-height: 500px;
 }
+
 ul {
     margin-top: 16px;
     color: var(--gold2);
     font-size: 30px;
     letter-spacing: 1px;
 }
+
+.foto-about {
+    width: 400px;
+    height: 300px;
+    align-content: right;
+    object-fit: cover;
+    border: 2px solid var(--gold2);
+    margin-top: 16px;
+}
+
 .about, .events, .photos, .chefs {
     background: var(--blue);
     border-top: 1px solid var(--gold);
@@ -131,9 +176,10 @@ ul {
     margin-top: 0;
     color: var(--gold);
 }
+
 .btn {
   margin-top: 20px;
-    width: 180px;
+  width: 100px;
   display: flex;
   font-family: 'Cormorant Garamond', serif;
   font-size: 0.75rem;
@@ -152,6 +198,7 @@ ul {
   background: transparent;
   color: var(--gold2);
 }
+
 .carrusel-auto {
     overflow: hidden;
     width: 100%;
@@ -161,7 +208,7 @@ ul {
 .carrusel-track {
     display: flex;
     gap: 16px;
-    animation: desplazar 12s linear infinite;
+    animation: desplazar 6s linear infinite;
 }
 
 .carrusel-track img {
@@ -176,6 +223,7 @@ ul {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
+
 .carrusel-chefs {
     display: flex;
     align-items: center;
@@ -211,6 +259,7 @@ ul {
     background: var(--gold2);
     color: var(--blue);
 }
+
 .contenedor-chefs {
     display: flex;
     flex-wrap: wrap;
@@ -218,6 +267,7 @@ ul {
     gap: 20px;
     padding: 40px 20px;
 }
+
 .tarjeta {
   position: relative;
   width: 400px;
@@ -226,12 +276,12 @@ ul {
   text-align: center;
   border: 2px solid var(--gold2);
   background: var(--bluedark);
-  }
-
+  transition: 0.5s;
+}
 
 .tarjeta:hover {
     transform: translateY(-8px);
-    border: 4px solid var(--gold);
+    border: 3px solid var(--gold);
 }
 
 .tarjeta h3 {
@@ -240,10 +290,6 @@ ul {
     letter-spacing: 2px;
 }
 
-.tarjeta h1:hover{
-     transform: scale(1.05);
-    color: #ccc;
-}
 .tarjeta-header {
     display: flex;
     flex-direction: column;
@@ -251,15 +297,13 @@ ul {
     gap: 8px;
 }
 
-/* ── FOTOS ── */
 .foto-perfil {
     width: 300px;
     height: 300px;
-
     border-radius: 0;
     object-fit: cover;
     margin: 0 auto;
-    border: 2px solid rgba(218, 165, 32, 0.5)
+    border: 2px solid rgba(218, 165, 32, 0.5);
 }
 
 .tarjeta-cuerpo {
@@ -268,7 +312,6 @@ ul {
     align-items: center;
     gap: 8px;
     margin-top: 1rem;
-    color: #ccc;
     font-size: 14px;
     font-family: 'Cormorant Garamond', serif;
 }
@@ -287,10 +330,8 @@ footer {
     color: var(--gold);
 }
 
-
-
 @media (max-width: 768px) {
-    .hamburguesa {
+    .menu {
         display: flex;
     }
 
@@ -308,41 +349,154 @@ footer {
         z-index: 99;
     }
 
-    /* Abre el nav cuando el checkbox está marcado */
     .toggle-check:checked ~ nav {
         display: flex;
     }
 }
- table{
+
+table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 16px;
- }
+}
 
- th, td {
+th, td {
    padding: 12px 16px;
    border: 1px solid var(--gold2);
    text-align: left;
- }
+}
 
- th {
+th {
    background: var(--gold2);
    color: var(--blue);
    font-weight: bold;
- }
+}
 
- tr:nth-child(even) {
+tr:nth-child(even) {
    background: var(--light);
- }
+}
 
- tr:hover {
+tr:hover {
    background: var(--gold2);
    color: var(--blue);
- }
-.logos {
-    width: 200px;
-    margin-top: 16px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+}
+
+.icono-redes {
+    width: 40px;    
+    height: 40px;
+    object-fit: contain;
+}
+.container-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.icono-redes:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+}
+
+section.menucomida {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.menu-grid {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.menu-item {
+  cursor: pointer;
+  overflow: hidden;
+  border: 1px solid var(--gold2);
+  border-radius: 8px;
+  width: 230px;
+  flex-shrink: 0;
+}
+
+.menu-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.menu-item p {
+  font-size: 14px;
+  padding: 6px 8px;
+  text-align: center;
+  color: var(--gold2);
+}
+
+.menu-item:hover img {
+  transform: scale(1.05);
+}
+
+.zoom-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+}
+
+.zoom-overlay.activo {
+  display: flex;
+}
+
+.zoom-overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border: 2px solid var(--gold2);
+  animation: aparecer 0.3s ease;
+}
+
+@keyframes aparecer {
+  from { transform: scale(0.7); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+.lista-imagenes {
+  display: flex;
+  gap: 14px;
+  list-style: none;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.lista-imagenes li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid var(--gold2);
+  padding-right: 6px;
+}
+
+.lista-imagenes li:last-child {
+  border-right: none;
+}
+
+.lista-imagenes li img {
+  width: 80px;
+  height: 50px;
+  object-fit: contain;
+  display: block;
+  border-radius: 5px;
+  background: white;
+  padding: 4px;
 }

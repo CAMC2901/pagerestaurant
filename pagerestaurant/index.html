@@ -12,7 +12,7 @@
     <h1><a href="#home"><img src="logorestaurant.png" class="logorestaurant"></a></h1>
 
     <input type="checkbox" id="toggle" class="toggle-check">
-    <label for="toggle" class="hamburguesa">
+    <label for="toggle" class="menu">
         <span></span>
         <span></span>
         <span></span>
@@ -24,10 +24,13 @@
             <a href="#photos">Galería</a>
             <a href="#chefs">Nuestros Chefs</a>
             <a href="#contact">Nuestras redes</a>
+            <a href="#menucomida">Menu</a>
         </nav>
     </header>
+<main>
             <section id="home" class="home">
                 <h2>Bienvenidos al Festival Gastronómico</h2>
+                <img src="logorestaurant.png" alt="Foto del festival" class="foto-home">
                 <p>Descubre los sabores del mundo en un solo lugar. Únete a nosotros para una experiencia culinaria inolvidable.</p>
             </section>
     
@@ -74,6 +77,7 @@
                     <li>Fomentar la innovación culinaria</li>
                     <li>Crear una comunidad de amantes de la comida</li>
                 </ul>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYJLiZqzsrWTvqJBr2kOMDVGfTNRAuyN-XZw&s" alt="Foto del festival" class="foto-about">
             </section>
 
             <section id="photos" class="photos">
@@ -104,7 +108,7 @@
 
                     <article class="tarjeta">
                         <div class="tarjeta-header">
-                            <img src="chef1.jpg" class="foto-perfil" alt="Chef 1">
+                            <img src="https://www.shutterstock.com/image-photo/restaurant-kitchen-portrait-confident-chef-600nw-2645077225.jpg" class="foto-perfil" alt="Chef 1">
                             <h3>Chef 1</h3>
                         </div>
                         <div class="tarjeta-cuerpo">
@@ -115,7 +119,7 @@
 
                     <article class="tarjeta">
                         <div class="tarjeta-header">
-                            <img src="chef2.jpg" class="foto-perfil" alt="Chef 2">
+                            <img src="https://blog.uvm.mx/hs-fs/hubfs/shutterstock_564397432.jpg?width=800&height=600&name=shutterstock_564397432.jpg" class="foto-perfil" alt="Chef 2">
                             <h3>Chef 2</h3>
                         </div>
                         <div class="tarjeta-cuerpo">
@@ -126,7 +130,7 @@
 
                     <article class="tarjeta">
                         <div class="tarjeta-header">
-                            <img src="chef3.jpg" class="foto-perfil" alt="Chef 3">
+                            <img src="https://img.freepik.com/fotos-premium/retrato-confianza-chef-femenina-cocina-comercial_107420-17904.jpg" class="foto-perfil" alt="Chef 3">
                             <h3>Chef 3</h3>
                         </div>
                         <div class="tarjeta-cuerpo">
@@ -136,7 +140,7 @@
                     </article>
                     <article class="tarjeta">
                         <div class="tarjeta-header">
-                            <img src="chef3.jpg" class="foto-perfil" alt="Chef 3">
+                            <img src="https://img.freepik.com/fotos-premium/retrato-feliz-chef-masculino-toque-blanco-delantal-sobre-fondo-gris-cocina-conc-culinario_368093-7540.jpg" class="foto-perfil" alt="Chef 3">
                             <h3>Chef 4</h3>
                         </div>
                         <div class="tarjeta-cuerpo">
@@ -146,7 +150,7 @@
                     </article>
                     <article class="tarjeta">
                         <div class="tarjeta-header">
-                            <img src="chef3.jpg" class="foto-perfil" alt="Chef 3">
+                            <img src="https://static8.depositphotos.com/1000393/876/i/950/depositphotos_8760845-stock-photo-chef-portrait.jpg" class="foto-perfil" alt="Chef 3">
                             <h3>Chef 5</h3>
                         </div>
                         <div class="tarjeta-cuerpo">
@@ -160,16 +164,41 @@
         <button class="flecha flecha-der" onclick="moverChef(1)">&#8594;</button>
     </div>
 </section>
-                
+<section class="menucomida">
+<h2>Nuestro Menú</h2>
+  
+  <div class="menu-grid">
+    <div class="menu-item" onclick="abrirZoom(this)">
+      <img src="menu.png" alt="Plato 1">
+      <p>haz click para ampliar</p>
+    </div>
+  </div>
+
+  <div class="zoom-overlay" id="zoomOverlay" onclick="cerrarZoom()">
+    <img src="menu.png" id="zoomImg" alt="Zoom">
+  </div>
+</section>
+</main>             
     
 
  <footer>
     <article id="contact">
                 <h2>Nuestras Redes Sociales</h2>
                 <p>Síguenos en nuestras redes sociales para estar al tanto de todas las novedades y eventos:</p>
-                <div>
-                 <img src="logosmedia.png" class="logos">
+                <div class="containter-media">
+                 <img src="facebook.png" alt="Facebook" class="icono-redes">
+                    <img src="x.png" alt="Twitter" class="icono-redes">
+                    <img src="instagram.png" alt="Instagram" class="icono-redes">
+                    <img src="tiktok.png" alt="TikTok" class="icono-redes">
                 </div>
+                <ul class="lista-imagenes">
+                    <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjDLcPDTY5yauQGN5o0csIt63z1XmChC0WLQ&s" ></li>
+                    <li><img src="https://riwi.io/wp-content/uploads/2023/07/Fondo-claro-logo2-1.png" ></li>
+                    <li><img src="https://static.wikia.nocookie.net/logopedia/images/8/88/Postob%C3%B3n2021.svg/revision/latest/scale-to-width-down/284?cb=20251219193157&path-prefix=es" ></li>
+                    <li><img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Logo_2019_Cerveza_Aguila.png" ></li>
+                    <li><img src="https://images.seeklogo.com/logo-png/50/2/colanta-logo-png_seeklogo-507334.png" ></li>
+                    <li><img src="https://images.seeklogo.com/logo-png/51/1/olimpica-logo-png_seeklogo-518362.png" id="olimpica"></li>
+                </ul>
 
     </article>
     <p>&copy; 2024 Festival Gastronómico. Todos los derechos reservados.</p>
