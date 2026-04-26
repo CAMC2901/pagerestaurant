@@ -22,9 +22,9 @@
             <a href="#events">Eventos</a>
             <a href="#about">Nosotros</a>
             <a href="#photos">Galería</a>
-            <a href="#chefs">Nuestros Chefs</a>
-            <a href="#contact">Nuestras redes</a>
-            <a href="#menucomida">Menu</a>
+            <a href="#chefs">Chefs</a>
+            <a href="#menucomida">Menú</a>
+            <a href="#info">Más info</a>           
         </nav>
     </header>
 <main>
@@ -32,6 +32,7 @@
                 <h2>Bienvenidos al Festival Gastronómico</h2>
                 <img src="logorestaurant.png" alt="Foto del festival" class="foto-home">
                 <p>Descubre los sabores del mundo en un solo lugar. Únete a nosotros para una experiencia culinaria inolvidable.</p>
+                <a class="btn-hero" onclick="abrirModal()">Reservar Ahora</a>
             </section>
     
             <section id="events" class="events">
@@ -66,10 +67,10 @@
                         </tr>
                     </tbody>
                 </table>
-                 <a href="#" class="btn">Reservar</a>
+                 <a class="btn" onclick="abrirModal()">Reservar</a>
             </section>
 
-            <section id="about" class="about">
+           <section id="about" class="about">
                 <h2>Acerca de Nosotros</h2>
                 <p>Somos un festival dedicado a celebrar la diversidad culinaria, reuniendo a chefs y amantes de la comida de todo el mundo.</p>
                 <ul>
@@ -77,9 +78,13 @@
                     <li>Fomentar la innovación culinaria</li>
                     <li>Crear una comunidad de amantes de la comida</li>
                 </ul>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYJLiZqzsrWTvqJBr2kOMDVGfTNRAuyN-XZw&s" alt="Foto del festival" class="foto-about">
+                <div class="about-fotos">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYJLiZqzsrWTvqJBr2kOMDVGfTNRAuyN-XZw&s" alt="Foto 1" class="foto-about">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxyL3EnOsKBlvxITGOZui_gek993g31rpttg&s" alt="Foto 2" class="foto-about">
+                    <img src="https://oleico.com/wp-content/uploads/2020/06/original-061eb31f9aaa850b7852a5e4411983a7-scaled-1.jpeg" alt="Foto 3" class="foto-about">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT59y19hNfTdWVy6Puykh8IZxy4lgin6QHo8Q&s" alt="Foto 4" class="foto-about">
+                </div>
             </section>
-
             <section id="photos" class="photos">
              <h2>Galería de Fotos</h2>
                 <div class="carrusel-auto">
@@ -164,7 +169,7 @@
         <button class="flecha flecha-der" onclick="moverChef(1)">&#8594;</button>
     </div>
 </section>
-<section class="menucomida">
+<section class="menucomida" id="menucomida">
 <h2>Nuestro Menú</h2>
   
   <div class="menu-grid">
@@ -177,32 +182,75 @@
   <div class="zoom-overlay" id="zoomOverlay" onclick="cerrarZoom()">
     <img src="menu.png" id="zoomImg" alt="Zoom">
   </div>
-</section>
 </main>             
     
+<footer id="info">
+    <div class="redes">
+        <h3>Síguenos</h3>
+        <div class="container-media">
+            <img src="facebook.png" alt="Facebook" class="icono-redes">
+            <img src="x.png" alt="Twitter" class="icono-redes">
+            <img src="instagram.png" alt="Instagram" class="icono-redes">
+            <img src="tiktok.png" alt="TikTok" class="icono-redes">
+        </div>
+    </div>
 
- <footer>
-    <article id="contact">
-                <h2>Nuestras Redes Sociales</h2>
-                <p>Síguenos en nuestras redes sociales para estar al tanto de todas las novedades y eventos:</p>
-                <div class="containter-media">
-                 <img src="facebook.png" alt="Facebook" class="icono-redes">
-                    <img src="x.png" alt="Twitter" class="icono-redes">
-                    <img src="instagram.png" alt="Instagram" class="icono-redes">
-                    <img src="tiktok.png" alt="TikTok" class="icono-redes">
-                </div>
-                <ul class="lista-imagenes">
-                    <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjDLcPDTY5yauQGN5o0csIt63z1XmChC0WLQ&s" ></li>
-                    <li><img src="https://riwi.io/wp-content/uploads/2023/07/Fondo-claro-logo2-1.png" ></li>
-                    <li><img src="https://static.wikia.nocookie.net/logopedia/images/8/88/Postob%C3%B3n2021.svg/revision/latest/scale-to-width-down/284?cb=20251219193157&path-prefix=es" ></li>
-                    <li><img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Logo_2019_Cerveza_Aguila.png" ></li>
-                    <li><img src="https://images.seeklogo.com/logo-png/50/2/colanta-logo-png_seeklogo-507334.png" ></li>
-                    <li><img src="https://images.seeklogo.com/logo-png/51/1/olimpica-logo-png_seeklogo-518362.png" id="olimpica"></li>
-                </ul>
+    <div style="text-align: center;">
+        <img src="logorestaurant.png" alt="Logo" class="logo-footer">
+    </div>
 
-    </article>
-    <p>&copy; 2024 Festival Gastronómico. Todos los derechos reservados.</p>
- </footer>
+    <div style="text-align: right;">
+        <h3>Ubicación</h3>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1454.5486226101243!2d-74.78125406082768!3d10.988202349787295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sco!4v1777179275909!5m2!1ses-419!2sco" 
+            width="200" height="150" style="border:0;" 
+            allowfullscreen="" loading="lazy">
+        </iframe>
+    </div>
+
+    <ul class="lista-imagenes" style="grid-column: 1 / -1; margin-top: 24px;">
+        <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjDLcPDTY5yauQGN5o0csIt63z1XmChC0WLQ&s"></li>
+        <li><img src="https://riwi.io/wp-content/uploads/2023/07/Fondo-claro-logo2-1.png"></li>
+        <li><img src="https://static.wikia.nocookie.net/logopedia/images/8/88/Postob%C3%B3n2021.svg/revision/latest/scale-to-width-down/284?cb=20251219193157&path-prefix=es"></li>
+        <li><img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Logo_2019_Cerveza_Aguila.png"></li>
+        <li><img src="https://images.seeklogo.com/logo-png/50/2/colanta-logo-png_seeklogo-507334.png"></li>
+        <li><img src="https://images.seeklogo.com/logo-png/51/1/olimpica-logo-png_seeklogo-518362.png"></li>
+    </ul>
+    <img src="WhatsApp_icon-removebg-preview.png" alt="WhatsApp" class="icono-wsp">
+    <p style="grid-column: 1 / -1; text-align: center; margin-top: 16px;">
+        &copy; 2024 Festival Gastronómico. Todos los derechos reservados.
+         
+    </p>
+</footer>
+ 
  <script src="script.js"></script>
+ <div class="modal-overlay" id="modalReserva" onclick="cerrarModal(event)">
+  <div class="modal-content">
+    <button class="modal-cerrar" onclick="cerrarModalBtn()">✕</button>
+    <h3>Reservar Entrada</h3>
+    <div class="form-group">
+      <label>Nombre completo</label>
+      <input type="text" placeholder="Tu nombre">
+    </div>
+    <div class="form-group">
+      <label>Correo electrónico</label>
+      <input type="email" placeholder="tu@email.com">
+    </div>
+    <div class="form-group">
+      <label>Evento</label>
+      <select>
+        <option>Cata de vinos internacionales</option>
+        <option>Talleres de cocina con chefs</option>
+        <option>Demostraciones de cocina en vivo</option>
+        <option>Competencia de comida callejera</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Número de personas</label>
+      <input type="number" min="1" max="10" placeholder="1">
+    </div>
+    <button class="btn-reservar-modal" onclick="confirmarReserva()">Confirmar Reserva</button>
+  </div>
+</div>
 </body>
 </html>
